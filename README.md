@@ -51,8 +51,6 @@ Step 1 writes `QC_results/`; step 2 writes `DINO_results/`; step 3 writes `Analy
 
 ## Reproducibility notes
 
-## Reproducibility notes
-
 The processed-data analysis has been successfully rerun in a fresh Python environment using the repository's included `DINO_results/DINO_tile_features.csv`. The analysis generates colony-level PCA results, spatial phenotype maps, radial phenotype measurements, statistical tests and manuscript figures.
 
 The processed dataset comprises 3,240 tiles from 40 biological colonies, with 384-dimensional DINOv2 embeddings. Biological colonies, rather than individual tiles, are treated as independent experimental replicates.
