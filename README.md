@@ -51,7 +51,17 @@ Step 1 writes `QC_results/`; step 2 writes `DINO_results/`; step 3 writes `Analy
 
 ## Reproducibility notes
 
-This repository is a **pre-release code package**: the scripts pass Python syntax checks, but the complete end-to-end analysis has not been rerun here on the original TIFF stacks. Folder/filename-based strain and replicate inference should be validated against an explicit experimental manifest before publication. Verify all reported statistics and manuscript figure outputs on the final dataset. Raw TIFFs and generated outputs are excluded from Git by default.
+## Reproducibility notes
+
+The processed-data analysis has been successfully rerun in a fresh Python environment using the repository's included `DINO_results/DINO_tile_features.csv`. The analysis generates colony-level PCA results, spatial phenotype maps, radial phenotype measurements, statistical tests and manuscript figures.
+
+The processed dataset comprises 3,240 tiles from 40 biological colonies, with 384-dimensional DINOv2 embeddings. Biological colonies, rather than individual tiles, are treated as independent experimental replicates.
+
+The experimental metadata (`DINO_results/DINOv2_metadata.csv`) records the colony-level sample assignments and source TIFF filenames. These assignments should be checked against the original experimental records.
+
+Reproducing the complete workflow from original TIFF stacks requires access to the raw microscopy images and the pretrained DINOv2 model. The complete raw-image processing workflow has not yet been independently validated from a fresh installation.
+
+Generated analysis outputs are excluded from version control by default.
 
 ## Citation and licence
 
