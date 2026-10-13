@@ -4,7 +4,8 @@ Reproducible analysis scripts for fluorescence image stacks of *Escherichia coli
 
 ## Dataset and experimental design
 
-Four strains (BW25113, amiA, ompR, ydgD), two media (LB and M9), five biological replicates per condition (40 colonies total). Each colony is represented by 81 image tiles, yielding 3,240 384-dimensional DINOv2 tile embeddings. LB and M9 were cultured for 24 and 48 hours respectively; effects attributed to medium cannot be fully separated from incubation duration.
+Four strains (BW25113, amiA, ompR, ydgD), two media (LB and M9), five biological replicates per condition (40 colonies total). Each colony is represented by 81 image tiles, yielding 3,240 384-dimensional DINOv2 tile embeddings. LB and M9 were cultured for 24 and 48 hours respectively; effects attributed to medium cannot be fully separated from incubation duration. 
+Experimental metadata (DINO_results/DINOv2_metadata.csv) provides a colony-level record of the 40 biological samples, including strain, growth medium, replicate number, source TIFF filename, image dimensions, number of z-planes, incubation duration and z-step. Each colony is uniquely identified by its medium, strain and replicate number. The corresponding processed dataset (DINO_results/DINO_tile_features.csv) contains 81 tile-level DINOv2 embeddings per colony. The manifest enables the experimental assignments and relationship between source images and processed features to be inspected independently.
 
 ## Features
 
