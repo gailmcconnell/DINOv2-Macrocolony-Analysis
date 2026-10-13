@@ -5,6 +5,7 @@ Reproducible analysis scripts for fluorescence image stacks of *Escherichia coli
 ## Dataset and experimental design
 
 Four strains (BW25113, amiA, ompR, ydgD), two media (LB and M9), five biological replicates per condition (40 colonies total). Each colony is represented by 81 image tiles, yielding 3,240 384-dimensional DINOv2 tile embeddings. LB and M9 were cultured for 24 and 48 hours respectively; effects attributed to medium cannot be fully separated from incubation duration. 
+
 Experimental metadata (DINO_results/DINOv2_metadata.csv) provides a colony-level record of the 40 biological samples, including strain, growth medium, replicate number, source TIFF filename, image dimensions, number of z-planes, incubation duration and z-step. Each colony is uniquely identified by its medium, strain and replicate number. The corresponding processed dataset (DINO_results/DINO_tile_features.csv) contains 81 tile-level DINOv2 embeddings per colony. The manifest enables the experimental assignments and relationship between source images and processed features to be inspected independently.
 
 ## Features
@@ -51,20 +52,20 @@ Step 1 writes `QC_results/`; step 2 writes `DINO_results/`; step 3 writes `Analy
 
 ## Reproducibility notes
 
-The processed-data analysis has been successfully rerun in a fresh Python environment using the repository's included `DINO_results/DINO_tile_features.csv`. The analysis generates colony-level PCA results, spatial phenotype maps, radial phenotype measurements, statistical tests and manuscript figures.
+The DINOv2 feature extraction and downstream analysis workflows have been independently validated following fresh software installations using the scripts provided in this repository. Feature extraction reproduced identical DINOv2 embeddings, while the downstream analysis regenerated the manuscript figures and principal statistical results, including the colony-level ANOVA and permutation test. These tests confirm reproducibility of both stages of the computational workflow.
 
 The processed dataset comprises 3,240 tiles from 40 biological colonies, with 384-dimensional DINOv2 embeddings. Biological colonies, rather than individual tiles, are treated as independent experimental replicates.
 
 The experimental metadata (`DINO_results/DINOv2_metadata.csv`) records the colony-level sample assignments and source TIFF filenames. These assignments should be checked against the original experimental records.
 
-Reproducing the complete workflow from original TIFF stacks requires access to the raw microscopy images and the pretrained DINOv2 model. The complete raw-image processing workflow has not yet been independently validated from a fresh installation.
+Reproducing the complete workflow from original TIFF stacks requires access to the raw microscopy images and the pretrained DINOv2 model. 
 
 Generated analysis outputs are excluded from version control by default.
 
 ## Citation and licence
 
-Add manuscript citation, dataset availability statement and chosen licence before making the repository public. DINOv2 is a pretrained model from Meta AI; follow its separate licence and attribution requirements.
+DINOv2 is a pretrained model from Meta AI. Please follow its separate licence and attribution requirements.
 
 ## Dataset verification
 
-The included processed CSV contains 3,240 tile records, 40 unique medium/strain/replicate groups, and 81 tiles per group. It contains 384 DINO embedding columns and no missing values. This is a structural check, not independent verification of manuscript results.
+The included processed CSV contains 3,240 tile records, 40 unique medium/strain/replicate groups, and 81 tiles per group. It contains 384 DINO embedding columns and no missing values.
