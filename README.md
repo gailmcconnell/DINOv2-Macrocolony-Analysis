@@ -17,7 +17,7 @@ Four strains (BW25113, amiA, ompR, ydgD), two media (LB and M9), five biological
 ## Files
 
 - `01_check_stacks.py`: input TIFF stack QC and previews.
-- `02_extract_DINO_features.py`: image projection, tiling and pretrained DINOv2 feature extraction.
+- `02_extract_DINOv2_features.py`: image projection, tiling and pretrained DINOv2 feature extraction.
 - `03_DINOv2_macrocolony_analysis.py`: colony and tile PCA, spatial/radial analyses, statistics and manuscript figures (based on analysis v1.4).
 
 ## Setup
@@ -29,7 +29,7 @@ Python 3.10 or 3.11 recommended. Install dependencies in a clean environment wit
 ```text
 project/
   01_check_stacks.py
-  02_extract_DINO_features.py
+  02_extract_DINOv2_features.py
   03_DINOv2_macrocolony_analysis.py
   LB/<strain folders>/*.tif
   M9/<strain folders>/*.tif
@@ -42,7 +42,7 @@ From the repository folder:
 
 ```bash
 python 01_check_stacks.py
-python 02_extract_DINO_features.py
+python 02_extract_DINOv2_features.py
 python 03_DINOv2_macrocolony_analysis.py
 ```
 
